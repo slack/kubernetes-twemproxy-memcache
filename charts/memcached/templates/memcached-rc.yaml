@@ -14,8 +14,8 @@ spec:
     metadata:
       labels:
         provider: memcached
-        release: {{ .Release.Name }}
-        version: {{ .Values.imageTag }}
+        release: {{ .Release.Name | quote }}
+        version: {{ .Values.imageTag | quote }}
     spec:
       containers:
       - name: memcached
